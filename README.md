@@ -1,6 +1,6 @@
 # :blue_book: Data Formating Guide
 
-### :bar_chart: Power BI
+[### :bar_chart: Power BI](power-bi/power_bi_useful_dax.md)
 
 #### :money_with_wings:Currency formatting - R$ (BRL)
 
