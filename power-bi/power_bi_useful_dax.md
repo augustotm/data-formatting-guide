@@ -1,7 +1,11 @@
 [Back to home](../README.md)
 
-- Name: `Calendar`
+# Power BI: Useful DAX functions
+
+### 1. Calendar table
+- Name: `0_Calendar`
 - Type: `Calculated Table`
+- Description: this creates a calendar table covering the minimum and maximum dates found across three source tables.
 ```dax
 0_Calendar =
 
@@ -19,8 +23,11 @@ RETURN
 CALENDAR(_min_all, _max_all)
 ```
 
-- Name: `Week Number`
+### 2. Week related columns
+
+- Name: `0_week_number`
 - Type: `Calculated Column`
+- Description: this calculates the week number based on the date and the year reference.
 ```dax
 0_week_number =
 
@@ -31,8 +38,9 @@ RETURN
 WEEKNUM(_date,1) + 52 * (YEAR(_date) - _year_pivot)
 ```
 
-- Name: `Week Start`
+- Name: `0_week_start`
 - Type: `Calculated Column`
+- Description: this calculates the first date of each week.
 ```dax
 0_week_start =
 
@@ -48,10 +56,11 @@ CALCULATE(
 )
 ```
 
-- Name: `Week End`
+- Name: `0_week_end`
 - Type: `Calculated Column`
+- Description: this calculates the last date of each week.
 ```dax
-0_week_start =
+0_week_end =
 
 VAR _date = 'Calendar'[Date]
 
